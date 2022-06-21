@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import utils.DriverManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,11 +23,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void baseBeforeMethod(){
-        System.setProperty("webdriver.chrome.driver","d:/driver/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get(config.getApplicationUrl());
+        DriverManager.setDriver();
     }
     @AfterMethod
     public void baseAfterMethod(ITestResult testResult) {

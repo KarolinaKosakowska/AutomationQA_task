@@ -33,17 +33,4 @@ public class Config {
             return url;
         }
     }
-
-    public String getApplicationUser() {
-        return properties.getProperty("application.user");
-    }
-
-    public String getApplicationPassword() {
-        return properties.getProperty("application.password");
-    }
-
-    public String getApplicationTest() {
-        return properties.getProperty("application.test");
-    }
-
 }
