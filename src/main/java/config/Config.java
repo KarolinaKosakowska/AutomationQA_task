@@ -25,7 +25,7 @@ public class Config {
 
     public String getApplicationUrl() {
         if (APPLICATION_URL != null && !APPLICATION_URL.isEmpty()) {
-            System.out.println("SRODOWISKO: Application url: " + APPLICATION_URL);
+            System.out.println("Application url: " + APPLICATION_URL);
             return APPLICATION_URL;
         } else {
             String url = properties.getProperty("application.url");

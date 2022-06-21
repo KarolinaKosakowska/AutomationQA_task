@@ -3,12 +3,16 @@ import pages.MainPage;
 
 public class CreateAccountTests extends BaseTest {
 
-    @Test(dataProvider = "getCorrectRegisterEmails")
-    public void createAccountAndVerifyItWasCreatedTest(String correctEmail, String password) {
+    @Test
+    public void createAccountAndVerifyItWasCreatedTest() {
 
         new MainPage(driver)
                 .clickOnAccountHeader()
-                .clickOnNewButton();
-
+                .clickOnNewButton()
+                .insertAccountName("Test")
+                .insertPhone("012345678")
+                .selectFromDropDown("Customer")
+                .clickOnSaveButton()
+                .assertNewCreatedAccountNameIsDisplayed("Test");
     }
 }

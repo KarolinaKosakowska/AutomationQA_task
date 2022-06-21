@@ -8,18 +8,17 @@ import utils.WaitUtils;
 
 public class MainPage {
     protected WebDriver driver;
-    AccountsPage accountsPage = new AccountsPage(driver);
-
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath="//*[@data-id='Account'])")
+    @FindBy(xpath = "//a[@title='Accounts']")
+
     private WebElement account_itemList;
 
-    public AccountsPage clickOnAccountHeader(){
+    public AccountsPage clickOnAccountHeader() {
         WaitUtils.waitForElementToBeClickable(account_itemList).click();
         return new AccountsPage(driver);
     }
