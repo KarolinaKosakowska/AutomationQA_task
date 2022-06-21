@@ -8,6 +8,8 @@ import utils.WaitUtils;
 
 public class MainPage {
     protected WebDriver driver;
+    AccountsPage accountsPage = new AccountsPage(driver);
+
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -17,8 +19,8 @@ public class MainPage {
     @FindBy(xpath="//*[@data-id='Account'])")
     private WebElement account_itemList;
 
-    public MainPage clickOnAccountHeader(){
+    public AccountsPage clickOnAccountHeader(){
         WaitUtils.waitForElementToBeClickable(account_itemList).click();
-        return this;
+        return new AccountsPage(driver);
     }
 }
